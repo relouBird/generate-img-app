@@ -1,0 +1,497 @@
+/* =========================================================
+   THEME LIGHT
+   ========================================================= */
+
+:root {
+  /* =========================================================
+     STEP 1: SOURCE COLORS (Palette mère)
+     ========================================================= */
+  --wattle: #CCDA47;
+  --bottle-green: #0A3625;
+
+  /* =========================================================
+     STEP 2: DERIVED PALETTE (Toutes les variantes)
+     ========================================================= */
+  /* Primary - Bottle Green & variants */
+  --primary-50:  #E8F2EB;
+  --primary-100: #C5DEC9;
+  --primary-200: #9EC9A6;
+  --primary-300: #72B380;
+  --primary-400: #3D9457;
+  --primary-500: var(--bottle-green);
+  --primary-600: #072A1C;
+  --primary-700: #051F14;
+  --primary-800: #03150D;
+  --primary-900: #020E08;
+  --primary-950: #010704;
+
+  /* Accent - Wattle & variants */
+  --accent-50:  #F6F9D4;
+  --accent-100: #EDF3A8;
+  --accent-200: #E3EC7D;
+  --accent-300: #DDE86A;
+  --accent-400: #D4E052;
+  --accent-500: var(--wattle);
+  --accent-600: #B8C63A;
+  --accent-700: #9BAA2D;
+  --accent-800: #7D8A22;
+  --accent-900: #606A18;
+
+  /* Background - Crème tones */
+  --background-50:          #ffffff;
+  --background-100:         #ffffff;
+  --background-soft-50:     #F6F8E8;
+  --background-soft-100:    #F0F2DC;
+  --background-soft-200:    #E8EAD0;
+  --background-soft-300:    #DDE0B8;
+  --background-soft-400:    #CDD0A0;
+  --background-soft-500:    #BCC088;
+
+  /* Text colors */
+  --title-50:       var(--bottle-green);
+  --text-color:     #1a4d35;
+  --text-secondary: #3D6B4F;
+  --text-tertiary:  #6B9A7A;
+
+  /* Border colors */
+  --border-base-50:  #F0F2DC;
+  --border-base-100: #E8EAD0;
+  --border-base-200: #DDE0B8;
+  --border-base-300: #BCC088;
+
+  /* Foreground */
+  --foreground-50:      var(--bottle-green);
+  --foreground-100:     var(--bottle-green);
+  --foreground-soft-50: var(--bottle-green);
+  --foreground-soft-100: var(--bottle-green);
+  --foreground-soft-200: #1a4d35;
+  --foreground-soft-300: #1a4d35;
+  --foreground-soft-400: #3D6B4F;
+  --foreground-soft-500: #3D6B4F;
+
+  /* Status colors */
+  --success-50:  #f0fdf4;
+  --success-100: #dcfce7;
+  --success-500: #16a34a;
+  --success-600: #15803d;
+
+  --error-50:  #fef2f2;
+  --error-100: #fecaca;
+  --error-400: #f87171;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+
+  --warning-50:  #fffbeb;
+  --warning-100: #fef08a;
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+
+  --info-50:  #f0f9ff;
+  --info-100: #bae6fd;
+  --info-400: #38bdf8;
+  --info-500: #0ea5e9;
+  --info-600: #0284c7;
+
+  /* White */
+  --white-100: #ffffff;
+  --white-90:  #ffffffcc;
+  --white-80:  #ffffffcc;
+  --white-70:  #ffffffb3;
+  --white-60:  #ffffff99;
+
+  /* Shadows - Light */
+  --shadow-xs:   0px 1px 2px 0px rgba(10, 54, 37, 0.06);
+  --shadow-sm:   0px 1px 3px 0px rgba(10, 54, 37, 0.1);
+  --shadow-md:   0px 4px 8px -2px rgba(10, 54, 37, 0.08), 0px 2px 4px -2px rgba(10, 54, 37, 0.05);
+  --shadow-lg:   0px 12px 16px -4px rgba(10, 54, 37, 0.07), 0px 4px 6px -2px rgba(10, 54, 37, 0.03);
+  --shadow-xl:   0px 1px 2px 0px rgba(10, 54, 37, 0.06);
+  --shadow-2xl:  0px 1px 2px 0px rgba(10, 54, 37, 0.06);
+  --shadow-3xl:  0px 1px 2px 0px rgba(10, 54, 37, 0.06);
+  --drop-shadow-theme-3xl: 0 32px 64px rgba(10, 54, 37, 0.12);
+  --popover-shadow: 0px 5px 5px -2px rgba(10, 54, 37, 0.04);
+  --shadow-hero: 0px -14px 100px 0px rgba(10, 54, 37, 0.05);
+
+  /* =========================================================
+     STEP 3: SEMANTIC TOKENS (Runtime theme - LIGHT)
+     ========================================================= */
+
+  /* App */
+  --background: var(--background-soft-50);
+  --foreground: var(--primary-500);
+
+  /* Card */
+  --card: var(--background-50);
+  --card-foreground: var(--primary-500);
+
+  /* Primary UI */
+  --primary: var(--primary-500);
+  --primary-foreground: var(--accent-500);
+
+  /* Secondary UI */
+  --secondary: var(--background-soft-100);
+  --secondary-foreground: var(--primary-500);
+
+  /* Muted */
+  --muted: var(--background-soft-200);
+  --muted-foreground: var(--text-secondary);
+
+  /* Borders */
+  --border: var(--border-base-200);
+
+  /* Status */
+  --success: var(--success-500);
+  --warning: var(--warning-500);
+  --danger: var(--error-500);
+
+  /* Buttons - Primary */
+  --button-primary-background: var(--primary-500);
+  --button-primary-hover-background: var(--primary-600);
+  --button-primary-text: var(--accent-500);
+  --button-primary-focus-ring: rgba(10, 54, 37, 0.25);
+
+  /* Buttons - Outline */
+  --button-outline-background: var(--background-50);
+  --button-outline-hover-background: var(--background-soft-100);
+  --button-outline-border: var(--border-base-200);
+  --button-outline-focus-ring: rgba(10, 54, 37, 0.12);
+  --button-outline-text: var(--primary-500);
+  --button-outline-hover-text: var(--primary-600);
+  --button-outline-disabled-background: var(--background-soft-50);
+  --button-outline-disabled-text: var(--accent-700);
+
+  /* Buttons - Disabled */
+  --button-disabled-background: var(--background-soft-100);
+  --button-disabled-border: var(--background-soft-200);
+  --button-disabled-text: var(--accent-700);
+
+  /* Buttons - Error */
+  --button-error-background: var(--error-600);
+  --button-error-hover-background: var(--error-600);
+  --button-error-border: var(--error-500);
+  --button-error-text: #ffffff;
+  --button-error-focus-ring: rgba(220, 38, 38, 0.2);
+
+  /* Buttons - Error Outline */
+  --button-error-outline-background: var(--error-50);
+  --button-error-outline-hover-background: var(--error-100);
+  --button-error-outline-border: var(--error-500);
+  --button-error-outline-focus-border: var(--error-600);
+  --button-error-outline-focus-ring: rgba(220, 38, 38, 0.2);
+  --button-error-outline-text: var(--error-600);
+  --button-error-outline-hover-text: var(--error-600);
+
+  /* Buttons - Success */
+  --button-success-background: var(--success-500);
+  --button-success-hover-background: var(--success-600);
+  --button-success-border: var(--success-500);
+  --button-success-text: #ffffff;
+  --button-success-focus-ring: rgba(22, 163, 74, 0.2);
+
+  /* Buttons - Success Outline */
+  --button-success-outline-background: var(--success-50);
+  --button-success-outline-hover-background: #bbf7d0;
+  --button-success-outline-border: var(--success-500);
+  --button-success-outline-focus-border: var(--success-600);
+  --button-success-outline-text: var(--success-600);
+  --button-success-outline-hover-text: var(--success-600);
+  --button-success-outline-focus-ring: rgba(22, 163, 74, 0.2);
+
+  /* Buttons - Ghost */
+  --button-ghost-text: var(--text-tertiary);
+  --button-ghost-hover-text: var(--text-secondary);
+  --button-ghost-hover-background: var(--background-soft-100);
+
+  /* Button Group */
+  --button-group-primary-background: var(--background-50);
+  --button-group-primary-hover-background: var(--primary-500);
+  --button-group-primary-text: var(--primary-500);
+  --button-group-primary-hover-text: var(--accent-500);
+  --button-group-secondary-background: var(--background-soft-50);
+  --button-group-secondary-text: #1a4d35;
+
+  /* Badges */
+  --badge-neutral-background: var(--background-soft-100);
+  --badge-neutral-text: #1a4d35;
+  --badge-neutral-icon-color: var(--text-secondary);
+
+  --badge-primary-background: var(--primary-50);
+  --badge-primary-text: var(--primary-500);
+  --badge-primary-icon-color: var(--primary-500);
+
+  --badge-error-background: var(--error-50);
+  --badge-error-text: var(--error-600);
+  --badge-error-icon-color: var(--error-500);
+
+  --badge-warning-background: var(--warning-50);
+  --badge-warning-text: #b45309;
+  --badge-warning-icon-color: var(--warning-500);
+
+  --badge-success-background: var(--success-50);
+  --badge-success-text: var(--success-600);
+  --badge-success-icon-color: var(--success-500);
+
+  --badge-cyan-background: #ecfeff;
+  --badge-cyan-text: #0e7490;
+  --badge-cyan-icon-color: #06b6d4;
+
+  --badge-sky-background: #f0f9ff;
+  --badge-sky-text: #0369a1;
+  --badge-sky-icon-color: #0ea5e9;
+
+  --badge-blue-background: #eff6ff;
+  --badge-blue-text: #1d4ed8;
+  --badge-blue-icon-color: #3b82f6;
+
+  --badge-violet-background: #f5f3ff;
+  --badge-violet-text: #6d28d9;
+  --badge-violet-icon-color: #8b5cf6;
+
+  --badge-purple-background: #faf5ff;
+  --badge-purple-text: #7e22ce;
+  --badge-purple-icon-color: #a855f7;
+
+  --badge-pink-background: #fdf2f8;
+  --badge-pink-text: #be185d;
+  --badge-pink-icon-color: #ec4899;
+
+  --badge-rose-background: #fff1f2;
+  --badge-rose-text: #be123c;
+  --badge-rose-icon-color: #f43f5e;
+
+  --badge-orange-background: #fff7ed;
+  --badge-orange-text: #c2410c;
+  --badge-orange-icon-color: #f97316;
+
+  /* Chart */
+  --chart-tick: var(--text-secondary);
+  --chart-legend: var(--text-secondary);
+  --chart-grid: var(--background-soft-200);
+
+  /* Sidebar */
+  --sidebar-nav-default-background: var(--background-soft-100);
+  --sidebar-nav-hover-background: var(--background-soft-200);
+  --sidebar-nav-secondary-hover-background: var(--border-base-200);
+  --sidebar-nav-hover-text: var(--primary-500);
+  --sidebar-nav-active-text: var(--primary-500);
+  --sidebar-nav-active-background: var(--border-base-200);
+  --sidebar-nav-focused-background: var(--border-base-200);
+  --sidebar-nav-default-text: var(--text-secondary);
+  --sidebar-nav-icon: var(--text-tertiary);
+  --sidebar-badge-background: var(--primary-500);
+  --sidebar-badge-text: var(--accent-500);
+  --sidebar-footer-background: var(--background-soft-200);
+  --sidebar-footer-title: var(--primary-500);
+  --sidebar-footer-subtitle: var(--text-secondary);
+  --sidebar-footer-button-text: var(--accent-500);
+
+  /* Cards */
+  --card-background-50: var(--background-50);
+  --card-background-100: var(--background-50);
+  --card-background-200: var(--background-soft-50);
+  --card-background-300: var(--background-soft-100);
+
+  /* Alerts */
+  --alert-success-background: var(--success-50);
+  --alert-success-icon-background: var(--success-500);
+  --alert-success-border: #bbf7d0;
+  --alert-success-close-icon: var(--success-500);
+  --alert-success-title: #166534;
+  --alert-success-description: var(--success-600);
+  --alert-success-button-background: var(--success-500);
+  --alert-success-button-hover-background: var(--success-600);
+  --alert-success-button-text: var(--success-600);
+
+  --alert-danger-background: var(--error-50);
+  --alert-danger-icon-background: var(--error-600);
+  --alert-danger-border: #fecaca;
+  --alert-danger-close-icon: var(--error-600);
+  --alert-danger-title: #991b1b;
+  --alert-danger-description: var(--error-600);
+  --alert-danger-button-background: var(--error-600);
+  --alert-danger-button-hover-background: var(--error-600);
+  --alert-danger-button-text: var(--error-600);
+
+  --alert-info-background: var(--info-50);
+  --alert-info-icon-background: var(--info-500);
+  --alert-info-border: #bae6fd;
+  --alert-info-close-icon: var(--info-600);
+  --alert-info-title: #075985;
+  --alert-info-description: var(--info-600);
+  --alert-info-button-background: var(--info-600);
+  --alert-info-button-hover-background: var(--info-600);
+  --alert-info-button-text: var(--info-600);
+
+  --alert-warning-background: var(--warning-50);
+  --alert-warning-icon-background: var(--warning-500);
+  --alert-warning-border: #fef08a;
+  --alert-warning-close-icon: var(--warning-600);
+  --alert-warning-title: #854d0e;
+  --alert-warning-description: var(--warning-600);
+  --alert-warning-button-background: var(--warning-600);
+  --alert-warning-button-hover-background: var(--warning-600);
+  --alert-warning-button-text: var(--warning-600);
+
+  --alert-default-background: var(--background-soft-50);
+  --alert-default-icon-background: var(--text-secondary);
+  --alert-default-border: var(--border-base-200);
+  --alert-default-close-icon: var(--primary-500);
+  --alert-default-title: var(--primary-500);
+  --alert-default-description: #1a4d35;
+  --alert-default-button-background: var(--primary-500);
+  --alert-default-button-hover-background: var(--primary-600);
+  --alert-default-button-text: var(--accent-500);
+
+  /* Inputs */
+  --input-background: var(--background-50);
+  --input-label-text: var(--primary-500);
+  --input-disabled-text: #BCC088;
+  --input-placeholder-text: var(--text-tertiary);
+  --input-primary-focus-border: var(--primary-300);
+  --input-error-focus-border: var(--error-500);
+  --input-success-focus-border: var(--success-500);
+  --input-error: var(--error-500);
+  --input-success: var(--success-500);
+
+  /* Tabs */
+  --tab-background: var(--background-soft-100);
+  --tab-active-background: var(--background-50);
+  --tab-secondary-active-background: var(--background-soft-200);
+
+  /* Checkbox */
+  --checkbox-background: var(--background-50);
+  --checkbox-checked-border: var(--primary-500);
+  --checkbox-checked-background: var(--primary-500);
+  --checkbox-checked-icon-color: var(--accent-500);
+
+  /* Scrollbar */
+  --scrollbar-background: var(--border-base-200);
+
+  /* Datepicker */
+  --datepicker-background: var(--background-50);
+  --datepicker-selected-background: var(--background-soft-50);
+
+  /* Dropdowns */
+  --dropdown-background: var(--background-50);
+  --dropdown-hover-background: var(--background-soft-50);
+  --dropdown-secondary-background: var(--background-50);
+  --dropdown-divider: var(--background-soft-200);
+
+  /* Calendar */
+  --calendar-primary-badge: var(--primary-500);
+  --calendar-primary-background: var(--primary-50);
+  --calendar-success-badge: var(--success-500);
+  --calendar-success-background: var(--success-50);
+  --calendar-warning-badge: #f97316;
+  --calendar-warning-background: #fff7ed;
+  --calendar-danger-badge: var(--error-500);
+  --calendar-danger-background: var(--error-50);
+  --calendar-info-badge: var(--info-500);
+  --calendar-info-background: var(--info-50);
+  --calendar-text: var(--primary-500);
+  --calendar-menu-text: var(--text-tertiary);
+  --calendar-dropdown-background: var(--background-50);
+
+  /* Pricing */
+  --pricing-active-switcher-background: var(--background-50);
+  --pricing-active-card-background: var(--primary-500);
+  --pricing-button-background: var(--primary-500);
+  --pricing-icon-color: var(--accent-500);
+  --pricing-icon-background: var(--primary-50);
+
+  /* FAQ */
+  --faq-primary-active-background: var(--background-soft-50);
+  --faq-secondary-active-background: var(--background-soft-200);
+  --faq-secondary-active-border: var(--border-base-200);
+  --faq-secondary-active-title: var(--primary-500);
+  --faq-secondary-active-text: #1a4d35;
+
+  /* Chat */
+  --chat-list-background-primary: #1a4d35;
+  --chat-list-background-primary-alt: var(--background-soft-100);
+  --chat-list-background-secondary: var(--primary-500);
+  --chat-list-background-secondary-alt: var(--background-soft-200);
+
+  /* Tooltip */
+  --tooltip-text: var(--primary-500);
+
+  /* Popovers */
+  --popover-title-background: var(--background-soft-100);
+  --popover-border: var(--border-base-200);
+
+  /* Skeleton */
+  --skeleton-gradient-50: var(--background-soft-200);
+  --skeleton-gradient-100: var(--background-soft-50);
+  --skeleton-gradient-200: var(--background-soft-200);
+
+  /* 404 */
+  --404-background: #F6F8E866;
+  --404-foreground: var(--border-base-200);
+
+  /* Blog */
+  --blog-shape: var(--border-base-200);
+
+  /* Modal */
+  --modal-button-success-background: var(--success-500);
+  --modal-button-info-background: var(--info-600);
+  --modal-button-warning-background: #ca8a04;
+  --modal-button-error-background: var(--error-600);
+
+  /* Section Title */
+  --section-title-badge: var(--primary-500);
+  --section-title-badge-background: #0A36250D;
+
+  /* Mobile Nav */
+  --mobile-nav-icon: var(--primary-500);
+  --mobile-nav-background: var(--background-soft-50);
+  --mobile-nav-hover-background: var(--background-soft-200);
+
+  /* Footer */
+  --footer-card-background: var(--background-soft-100);
+  --footer-background: var(--background-soft-50);
+
+  /* Bento */
+  --bento-card-background: var(--background-soft-100);
+  --bento-gradient-shade-1: #F6F8E800;
+  --bento-gradient-shade-2: #F6F8E880;
+  --bento-gradient-shade-3: #F6F8E8;
+
+  /* CTA */
+  --cta-icon-background: var(--background-50);
+  --cta-background: var(--background-soft-50);
+
+  /* Hero */
+  --hero-background: var(--background-soft-100);
+  --hero-card-background: var(--background-50);
+  --hero-card-2-background: var(--background-soft-100);
+  --hero-gradient-shade-1: #F6F8E899;
+  --hero-gradient-shade-2: #F6F8E8;
+
+  /* Toggle */
+  --toggle-default-background: var(--border-base-200);
+  --toggle-disabled-foreground: var(--background-50);
+  --toggle-disabled-background: var(--background-soft-100);
+  --toggle-active-background: var(--primary-500);
+
+  /* Map */
+  --map-fill: var(--primary-100);
+
+  /* AI Sidebar */
+  --ai-sidebar-primary-gradient-shade-1: var(--background-soft-50);
+  --ai-sidebar-primary-gradient-shade-2: #F6F8E800;
+  --ai-sidebar-secondary-gradient-shade-1: var(--background-soft-100);
+  --ai-sidebar-secondary-gradient-shade-2: #F0F2DC00;
+  --ai-sidebar-hover-primary-shade-1: var(--background-soft-200);
+  --ai-sidebar-hover-primary-shade-2: #E8EAD000;
+  --ai-sidebar-hover-secondary-shade-1: var(--border-base-200);
+  --ai-sidebar-hover-secondary-shade-2: #DDE0B800;
+  --ai-sidebar-hover-primary-background: var(--background-soft-200);
+  --ai-sidebar-hover-secondary-background: var(--border-base-200);
+  --ai-title-gradient-shade-1: var(--primary-500);
+  --ai-title-gradient-shade-2: var(--text-tertiary);
+  --ai-hero-blend-1: var(--background-soft-100);
+  --ai-hero-blend-2: #F0F2DC00;
+
+  /* Animations */
+  --animate-pulse-custom: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

@@ -44,6 +44,7 @@ type ConversationStoreActions = {
   continueConversation: (payload: ContinueConversationPayload) => Promise<void>;
   /** Réinitialise la conversation active (retour à l'état vide) */
   clearActiveConversation: () => void;
+  clearState: () => void;
 };
 
 // ─── Store ────────────────────────────────────────────────────────────────────

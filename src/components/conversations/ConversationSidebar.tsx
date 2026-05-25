@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useStore } from "zustand/react";
 import { useConversationStore } from "@/stores/conversation.store";
 import { ConversationItem } from "./ConversationItem";
+import { Button } from "../ui/Button";
+import ThemeSelector from "../ui/ThemeSelector";
 
 type Props = {
   sideview: boolean;
@@ -17,12 +19,21 @@ export function ConversationSidebar({
   const [search, setSearch] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const { conversations, activeConversationId, isLoading, selectConversation } =
-    useStore(useConversationStore);
+  const {
+    conversations,
+    activeConversationId,
+    isLoading,
+    selectConversation,
+    clearState,
+  } = useStore(useConversationStore);
 
   const filtered = conversations.filter((c) =>
     c.name.toLowerCase().includes(search.toLowerCase()),
   );
+
+  const logout = () => {
+    clearState();
+  };
 
   // Gestion de l'animation d'entrée/sortie
   useEffect(() => {
@@ -55,7 +66,12 @@ export function ConversationSidebar({
         {/* Header avec bouton de fermeture mobile */}
         <div className="flex items-center justify-between px-4 py-4 border-b border-base-200">
           <div className="flex items-center gap-0">
-            <img src="/logo.svg" width={40} className="-translate-y-1" alt="Favicon" />
+            <img
+              src="/logo.svg"
+              width={40}
+              className="-translate-y-1"
+              alt="Favicon"
+            />
 
             <span className="text-lg font-semibold text-title-50">
               Conversations
@@ -66,7 +82,7 @@ export function ConversationSidebar({
             <button
               onClick={onNewConversation}
               title="Nouvelle conversation"
-              className="size-7 rounded-lg bg-primary-50 grid place-items-center text-primary-500 hover:bg-primary-100 transition-colors"
+              className="size-7 rounded-lg bg-primary-50 grid place-items-center text-primary-500 border border-primary-500/50 hover:bg-primary-100 transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path
@@ -92,7 +108,7 @@ export function ConversationSidebar({
         </div>
 
         {/* Liste */}
-        <div className="flex-1 overflow-y-auto px-2 pb-4 space-y-0.5">
+        <div className="flex-1 max-h-11/12 overflow-y-auto px-2 pb-4 space-y-0.5">
           {isLoading && conversations.length === 0 && (
             <div className="space-y-1.5 px-1 pt-1">
               {[...Array(4)].map((_, i) => (
@@ -124,6 +140,36 @@ export function ConversationSidebar({
               }}
             />
           ))}
+        </div>
+
+        {/*Choix de théme et Logout*/}
+        <div className="px-3 py-3 border-t border-base-200 space-y-2">
+          {/* Theme selector */}
+
+          <ThemeSelector />
+
+          {/* Logout button */}
+          <Button
+            onClick={() => {
+              logout();
+            }}
+            className="w-full flex items-center gap-2 p-2 rounded-lg bg-transparent text-red-700 border border-red-700/70 hover:bg-red-700/5 focus-visible:hidden outline-none focus:ring-0 focus:ring-transparent transition-colors"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+              />
+            </svg>
+            <span className="text-sm">Déconnexion</span>
+          </Button>
         </div>
       </aside>
     </>
